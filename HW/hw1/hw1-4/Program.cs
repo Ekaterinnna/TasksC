@@ -14,4 +14,3 @@ if (max < c)
     max = c;
 
 Console.WriteLine(max);
-Console.ReadLine();
