@@ -7,4 +7,3 @@ double a = n % 2;
 if (a == 0) 
     Console.WriteLine("да");
 else Console.WriteLine("нет");
-Console.ReadLine();
