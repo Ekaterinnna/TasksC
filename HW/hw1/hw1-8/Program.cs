@@ -10,4 +10,3 @@ while (k <= N)
     Console.Write($"{k} ");
     k = k + 2;
 }
-Console.ReadLine();
