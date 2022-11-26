@@ -14,7 +14,7 @@ int SumNum(int number)
     int result = 0;
     for (int i = 0; i < length; i++)
     {
-        result = result + Convert.ToInt32(Char.GetNumericValue(arr[i]));
+        result = result + int.Parse((arr[i]).ToString());
     }
     return result;
 }
