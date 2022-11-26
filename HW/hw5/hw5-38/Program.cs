@@ -1,7 +1,5 @@
 ﻿// Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
-// Методы задания массива
-
 int GetNumber(string text)
 {
     Console.Write(text);
@@ -40,8 +38,6 @@ string PrintGood(double[] numbers)
   return result + "]";
 }
 
-// метод - найти макс
-
 double FindMax(double[] arr)
 {
     int len = arr.Length;
@@ -54,8 +50,6 @@ double FindMax(double[] arr)
     return max;
 }
 
-// метод - найти мин
-
 double FindMin(double[] arr)
 {
     int len = arr.Length;
@@ -67,8 +61,6 @@ double FindMin(double[] arr)
     }
     return min;
 }
-
-// посчитать разницу и вывести
 
 int count = GetNumber("Введите количество элементов в массиве: ");
 double[] array = CreateArray(count);
