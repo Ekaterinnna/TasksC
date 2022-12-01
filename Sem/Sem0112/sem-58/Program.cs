@@ -37,10 +37,35 @@ void PrintTable(int[,] tab)
   }
 }
 
-int a = 3;
-int b = 3;
+int[,] TurnTable(int[,] tab)
+{
+  int row = tab.GetLength(0);
+  int col = tab.GetLength(1);
+  int[,] turnt = new int[col,row];
+  if (row == col)
+  {
+    for (int i = 0; i < col; i++)
+      for (int j = 0; j < row; j++)
+      {
+        turnt [i,j] = tab [j,i];
+      }
+  }
+  return turnt;
+}
+
+int a = 5;
+int b = 5;
 int[,] ourtable = Create(a,b);
 Fill(ourtable);
 Console.WriteLine();
 PrintTable(ourtable);
 Console.WriteLine();
+
+if (a == b)
+{
+  ourtable = TurnTable(ourtable);
+  Console.WriteLine();
+  PrintTable(ourtable);
+  Console.WriteLine();
+}
+else Console.WriteLine("Заменить строки на столбцы невозможно");
