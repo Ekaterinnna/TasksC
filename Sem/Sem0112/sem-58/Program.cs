@@ -14,12 +14,14 @@ int[,] Create(int a, int b)
 
 void Fill(int[,] tab)
 {
+    int min = 1;
+    int max = 100;
     int row = tab.GetLength(0);
     int col = tab.GetLength(1);
     for (int i = 0; i < row; i++)
       for (int j = 0; j < col; j++)
     {
-        tab[i,j] = new Random().Next(0, 100);
+        tab[i,j] = new Random().Next(min, max);
     }
 }
 
