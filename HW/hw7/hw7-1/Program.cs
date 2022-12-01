@@ -48,6 +48,12 @@ string PrintPasPlus(int[] koeff)
 {
     string output = String.Empty;
     string[] pows = { "⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹" };
+    if (koeff.Length == 1)
+        output += "1";
+    if (koeff.Length == 2)
+        output += "a + b";
+    if (koeff.Length > 2)
+    {
     for (int i = 0; i < koeff.Length; i++)
     {
         int powa = koeff.Length - 1 - i;
@@ -60,9 +66,11 @@ string PrintPasPlus(int[] koeff)
         {
             if (i != (koeff.Length - 1))
             {
-                if (powa == 1)
+                if (powa == 1 && powb == 1)
+                    output += $" + {koeff[i]}⋅a⋅b";                   
+                if (powa == 1 && powb != 1)
                     output += $" + {koeff[i]}⋅a⋅b{pows[powb]}";
-                if (powb == 1)
+                if (powb == 1 && powa != 1)
                     output += $" + {koeff[i]}⋅a{pows[powa]}⋅b";
                 if (powa != 1 && powb != 1)
                     output += $" + {koeff[i]}⋅a{pows[powa]}⋅b{pows[powb]}";
@@ -72,6 +80,7 @@ string PrintPasPlus(int[] koeff)
         }
              
     }
+    }
     return output;
 }
 
@@ -79,6 +88,12 @@ string PrintPasMinus(int[] koeff)
 {
     string output = String.Empty;
     string[] pows = { "⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹" };
+     if (koeff.Length == 1)
+        output += "1";
+    if (koeff.Length == 2)
+        output += "a - b";
+    if (koeff.Length > 2)
+    {
     for (int i = 0; i < koeff.Length; i++)
     {
         int powa = koeff.Length - 1 - i;
@@ -93,9 +108,11 @@ string PrintPasMinus(int[] koeff)
             {
                 if (i != (koeff.Length - 1))
                 {
-                    if (powa == 1)
+                    if (powa == 1 && powb == 1)
+                        output += $" + {koeff[i]}⋅a⋅b";                   
+                    if (powa == 1 && powb != 1)
                         output += $" + {koeff[i]}⋅a⋅b{pows[powb]}";
-                    if (powb == 1)
+                    if (powb == 1 && powa != 1)
                         output += $" + {koeff[i]}⋅a{pows[powa]}⋅b";
                     if (powa != 1 && powb != 1)
                         output += $" + {koeff[i]}⋅a{pows[powa]}⋅b{pows[powb]}";
@@ -107,9 +124,11 @@ string PrintPasMinus(int[] koeff)
             {
                 if (i != (koeff.Length - 1))
                 {
-                    if (powa == 1)
+                    if (powa == 1 && powb == 1)
+                        output += $" - {koeff[i]}⋅a⋅b";
+                    if (powa == 1 && powb != 1)
                         output += $" - {koeff[i]}⋅a⋅b{pows[powb]}";
-                    if (powb == 1)
+                    if (powb == 1 && powa != 1)
                         output += $" - {koeff[i]}⋅a{pows[powa]}⋅b";
                     if (powa != 1 && powb != 1)
                         output += $" - {koeff[i]}⋅a{pows[powa]}⋅b{pows[powb]}";
@@ -119,13 +138,14 @@ string PrintPasMinus(int[] koeff)
             }
         }   
     }
+    }
     return output;
 }
 
 string[] pows = { "⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹" };
 int[,] tr = CreateTriangle(10);
 PrintTriangle(tr);
-int k = 7;
+int k = 4;
 int[] koeff = GetKoeff(tr, k);
 
 Console.WriteLine();
