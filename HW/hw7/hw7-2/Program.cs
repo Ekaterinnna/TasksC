@@ -20,7 +20,6 @@ int[,] CreateTriangle(int row)
   return triangle;
 }
 
-/*
 void PrintTriangle(int[,] triangle)
 {
   int row = triangle.GetLength(0);
@@ -34,7 +33,6 @@ void PrintTriangle(int[,] triangle)
     Console.WriteLine();
   }
 }
-*/
 
 void PrintTriangleStar(int[,] triangle)
 {
@@ -54,6 +52,9 @@ void PrintTriangleStar(int[,] triangle)
         }
     }
 }
+
+int[,] trian = CreateTriangle(10);
+PrintTriangle(trian);
 
 int[,] tr = CreateTriangle(80);
 PrintTriangleStar(tr);
