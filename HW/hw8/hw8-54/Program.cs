@@ -33,7 +33,28 @@ string PrintTable(int[,] tab)
     return result;
 }
 
-
+int[,] SortedTable(int[,] tab)
+{
+    int[,] sort = new int[tab.GetLength(0), tab.GetLength(1)];
+    sort = tab;
+    int reserve = 0;
+    for (int j = 0; j < tab.GetLength(0); j++)
+    {
+        for (int i = 0; i < tab.GetLength(0); i++)
+        {
+            for (int k = 0; k < tab.GetLength(1) - 1; k++)
+            {
+                if (tab[i, k] < tab[i, k+1])
+                {
+                    reserve = sort[i, k];
+                    sort[i, k] = sort[i, k+1];
+                    sort[i, k+1] = reserve;
+                }
+            }
+        }
+    }
+    return sort;
+}
 
 int a = 5;
 int b = 5;
@@ -41,4 +62,10 @@ int[,] ourtable = Create(a,b);
 Fill(ourtable);
 Console.WriteLine();
 Console.WriteLine(PrintTable(ourtable));
+Console.WriteLine();
+
+int[,] sortedtable = SortedTable(ourtable);
+
+Console.WriteLine();
+Console.WriteLine(PrintTable(sortedtable));
 Console.WriteLine();
