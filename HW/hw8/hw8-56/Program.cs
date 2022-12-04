@@ -72,20 +72,6 @@ int MinSum(int[] k)
     return minsumindex;
 }
 
-string PrintGood(int[] numbers)
-{
-  int size = numbers.Length;
-  int i = 0;
-  string result = "[ ";
-
-  while (i < size)
-  {
-    result += ($"{numbers[i]} ");
-    i++;
-  }
-  return result + "]";
-}
-
 int a = 3;
 int b = 4;
 int[,] ourtable = Create(a,b);
@@ -95,6 +81,5 @@ Console.WriteLine(PrintTable(ourtable));
 Console.WriteLine();
 
 int[] sumarray = ArrayOfSums(ourtable);
-Console.WriteLine(PrintGood(sumarray));
 int rownumber = MinSum(sumarray);
 Console.WriteLine($"Номер строки с минимальной суммой:{rownumber+1}");
